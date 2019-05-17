@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/regex-filter/static/css/main.34de6062.chunk.css",
+    "main.js": "/regex-filter/static/js/main.2fd37e08.chunk.js",
+    "main.js.map": "/regex-filter/static/js/main.2fd37e08.chunk.js.map",
+    "runtime~main.js": "/regex-filter/static/js/runtime~main.4128c18b.js",
+    "runtime~main.js.map": "/regex-filter/static/js/runtime~main.4128c18b.js.map",
+    "static/js/2.53f4018a.chunk.js": "/regex-filter/static/js/2.53f4018a.chunk.js",
+    "static/js/2.53f4018a.chunk.js.map": "/regex-filter/static/js/2.53f4018a.chunk.js.map",
+    "index.html": "/regex-filter/index.html",
+    "precache-manifest.adf48dd8f87d98f70dc2ac69d4185c77.js": "/regex-filter/precache-manifest.adf48dd8f87d98f70dc2ac69d4185c77.js",
+    "service-worker.js": "/regex-filter/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "/regex-filter/static/css/main.34de6062.chunk.css.map"
+  }
+}
