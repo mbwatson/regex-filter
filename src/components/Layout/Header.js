@@ -3,5 +3,8 @@ import styled from 'styled-components'
 export const Header = styled.header`
     background-color: #ccc;
     display: flex;
-    justify-content: stretch;
+    flex-direction: row;
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
 `
