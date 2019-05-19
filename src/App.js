@@ -3,7 +3,7 @@ import initialData from './data'
 import { SiteWrapper, Header, Main } from './components/Layout'
 import { FilterMenu } from './components/Menu/FilterMenu'
 import { RegexInputContainer, RegexInput } from './components/RegexInput'
-import { Results } from './components/Results'
+import { Results, Row } from './components/Results'
 import {
     Raw as RawIcon,
     Contains as ContainsIcon,
@@ -99,10 +99,12 @@ function App() {
             </Header>
             <Main>
                 <Results>
-                    <h1>Names</h1>
-                    <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
-                        { filteredData && filteredData.map(name => <li key={ name }>{ name }</li>) }
-                    </ul>
+                    <h1>Names ({ filteredData.length })</h1>
+                    {
+                        filteredData && filteredData.map((name, i) => (
+                            <Row key={ i } color={ i % 2 === 0 ? '#333' : '#444' }>{ name }</Row>
+                        ))
+                    }
                 </Results>
             </Main>
         </SiteWrapper>
