@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FilterButton } from './FilterButton'
+import { Tooltip } from '../Tooltip'
 
 const Menu = styled.div`
     background-color: #111;
@@ -14,9 +15,11 @@ export const FilterMenu = ({ items, selection, changeHandler }) => {
         <Menu>
             {
                 items.map(item => (
-                    <FilterButton selected={ item.value === selection } onClick={ changeHandler(item.value) } aria-label={ item.ariaLabel }>
-                        { item.icon }
-                    </FilterButton>
+                    <Tooltip text={ item.text }>
+                        <FilterButton selected={ item.value === selection } onClick={ changeHandler(item.value) } aria-label={ item.ariaLabel }>
+                            { item.icon }
+                        </FilterButton>
+                    </Tooltip>
                 ))
             }
         </Menu>
