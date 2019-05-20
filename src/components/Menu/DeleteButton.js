@@ -16,7 +16,7 @@ const DeleteButtonContainer = styled.button`
 
 export const DeleteButton = ({ clickHandler }) => {
     return (
-        <DeleteButtonContainer onClick={ clickHandler }>
+        <DeleteButtonContainer onClick={ clickHandler } aria-label="Delete search pattern">
             <DeleteIcon size="28" fill="#fff" />
         </DeleteButtonContainer>
     )

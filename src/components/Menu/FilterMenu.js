@@ -14,7 +14,7 @@ export const FilterMenu = ({ items, selection, changeHandler }) => {
         <Menu>
             {
                 items.map(item => (
-                    <FilterButton selected={ item.value === selection } onClick={ changeHandler(item.value) }>
+                    <FilterButton selected={ item.value === selection } onClick={ changeHandler(item.value) } aria-label={ item.ariaLabel }>
                         { item.icon }
                     </FilterButton>
                 ))

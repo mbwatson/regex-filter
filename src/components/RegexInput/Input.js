@@ -15,3 +15,6 @@ export const RegexInput = styled.input`
         opacity: 0.5;
     }
 `
+export const Label = styled.label`
+    color: #ccc;
+`

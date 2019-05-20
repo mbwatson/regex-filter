@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import initialData from './data'
 import { SiteWrapper, Header, Main } from './components/Layout'
 import { FilterMenu } from './components/Menu/FilterMenu'
-import { RegexInputContainer, RegexInput } from './components/RegexInput'
+import { RegexInputContainer, RegexInput, Label } from './components/RegexInput'
 import { Results, Row } from './components/Results'
 import {
     Raw as RawIcon,
@@ -24,13 +24,13 @@ const EQUALS = 'EQUALS'
 const DOES_NOT_EQUAL = 'DOES_NOT_EQUAL'
 
 const filterOptions = [
-    { text: 'RAW', icon: <RawIcon />, value: RAW },
-    { text: 'Contains', icon: <ContainsIcon />, value: CONTAINS },
-    { text: 'Does Not Contain', icon: <DoesNotContainIcon />, value: DOES_NOT_CONTAIN },
-    { text: 'Starts With', icon: <StartsWithIcon />, value: STARTS_WITH },
-    { text: 'Ends With', icon: <EndsWithIcon />, value: ENDS_WITH },
-    { text: 'Equals', icon: <EqualsIcon />, value: EQUALS },
-    { text: 'Does not Equal', icon: <DoesNotEqualIcon />, value: DOES_NOT_EQUAL },
+    { text: 'RAW', icon: <RawIcon />, value: RAW, ariaLabel: "Filter names with raw regex pattern" },
+    { text: 'Contains', icon: <ContainsIcon />, value: CONTAINS, ariaLabel: "Filter names that contain search pattern" },
+    { text: 'Does Not Contain', icon: <DoesNotContainIcon />, value: DOES_NOT_CONTAIN, ariaLabel: "Filter names that do not contain search pattern" },
+    { text: 'Starts With', icon: <StartsWithIcon />, value: STARTS_WITH, ariaLabel: "Filter names that start with search pattern" },
+    { text: 'Ends With', icon: <EndsWithIcon />, value: ENDS_WITH, ariaLabel: "Filter names that end with  search pattern" },
+    { text: 'Equals', icon: <EqualsIcon />, value: EQUALS, ariaLabel: "Filter names equal the search pattern" },
+    { text: 'Does not Equal', icon: <DoesNotEqualIcon />, value: DOES_NOT_EQUAL, ariaLabel: "Filter names that do not equal the search pattern" },
 ]
 
 function App() {
@@ -93,7 +93,7 @@ function App() {
             <Header>
                 <FilterMenu items={ filterOptions } selection={ matchType } changeHandler={ handleSelection } />
                 <RegexInputContainer>
-                    <RegexInput onChange={ handleChangePattern } placeholder="Search..." value={ pattern } />
+                    <RegexInput aria-label="Search Pattern" onChange={ handleChangePattern } placeholder="Search..." value={ pattern } />
                     <DeleteButton clickHandler={ handleDeletePattern } />
                 </RegexInputContainer>
             </Header>
