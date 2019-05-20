@@ -35,7 +35,7 @@ const filterOptions = [
 
 function App() {
     const data = initialData.map(({ first_name, last_name }) => `${ first_name } ${ last_name }`)
-    const [pattern, setPattern] = useState()
+    const [pattern, setPattern] = useState('')
     const [matchType, setMatchType] = useState(RAW)
     const [filteredData, setFilteredData] = useState('')
     
@@ -94,7 +94,7 @@ function App() {
                 <FilterMenu items={ filterOptions } selection={ matchType } changeHandler={ handleSelection } />
                 <RegexInputContainer>
                     <RegexInput aria-label="Search Pattern" onChange={ handleChangePattern } placeholder="Search..." value={ pattern } />
-                    <DeleteButton clickHandler={ handleDeletePattern } />
+                    <DeleteButton clickHandler={ handleDeletePattern } active={ pattern.length > 0 } />
                 </RegexInputContainer>
             </Header>
             <Main>

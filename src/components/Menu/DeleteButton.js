@@ -14,12 +14,21 @@ const DeleteButtonContainer = styled.button`
     &:hover {
         background-color: #a33;
     }
+    ${
+        props => props.active ? `
+            opacity: 1.0;
+            pointer-events: auto;
+        ` : `
+            opacity: 0.5;
+            pointer-events: none;
+        `
+    }
 `
 
-export const DeleteButton = ({ clickHandler }) => {
+export const DeleteButton = ({ clickHandler, active = true }) => {
     return (
-        <Tooltip text="Delete Pattern" placement="left">
-            <DeleteButtonContainer onClick={ clickHandler } aria-label="Delete search pattern">
+        <Tooltip text="Clear Pattern" placement="left">
+            <DeleteButtonContainer onClick={ clickHandler } aria-label="Clear search pattern" active={ active }>
                 <DeleteIcon size="28" fill="#fff" />
             </DeleteButtonContainer>
         </Tooltip>
