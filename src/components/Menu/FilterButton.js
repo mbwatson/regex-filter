@@ -12,7 +12,6 @@ export const FilterButton = styled.button`
     flex: 1;
     border: 0;
     height: 100%;
-    
     outline: none;
     cursor: pointer;
     transition: background-color 150ms;
