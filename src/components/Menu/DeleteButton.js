@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Delete as DeleteIcon } from '../Icons'
 import { Tooltip } from '../Tooltip'

@@ -43,6 +43,7 @@ const Popup = styled.div`
     position: absolute;
     vertical-align: middle;
     white-space: nowrap;
+    color: #000;
     pointer-events: none;
     ${ props => adjustForPlacement(props.placement) };
     opacity: 0;

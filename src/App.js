@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import initialData from './data'
 import { SiteWrapper, Header, Main } from './components/Layout'
 import { FilterMenu } from './components/Menu/FilterMenu'
-import { RegexInputContainer, RegexInput, Label } from './components/RegexInput'
+import { RegexInputContainer, RegexInput } from './components/RegexInput'
 import { Results, Row } from './components/Results'
 import {
     Raw as RawIcon,
@@ -14,6 +14,9 @@ import {
     DoesNotEqual as DoesNotEqualIcon,
 } from './components/Icons'
 import { DeleteButton } from './components/Menu/DeleteButton'
+import { FloatingLink } from './components/Link'
+import GitHubLogo from './components/Icons/GitHubLogo.png'
+import { Tooltip } from './components/Tooltip'
 
 const RAW = 'RAW'
 const CONTAINS = 'CONTAINS'
@@ -86,7 +89,7 @@ function App() {
         } else {
             setFilteredData(data)
         }
-    }, [pattern, matchType])
+    }, [data, pattern, matchType])
 
     return (
         <SiteWrapper>
@@ -106,6 +109,11 @@ function App() {
                         ))
                     }
                 </Results>
+                <FloatingLink href="https://github.com/mbwatson/filter">
+                    <Tooltip text="View on GitHub" placement="left">
+                        <img src={ GitHubLogo } width="32" alt="GitHub Logo" />
+                    </Tooltip>
+                </FloatingLink>
             </Main>
         </SiteWrapper>
     )
